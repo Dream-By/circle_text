@@ -28,5 +28,17 @@ public class CircleTextView extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(2.0f);
         mPaint.setAntiAlias(true);
+
+        mTextPaint.setTextSize(36);
+        mTextPaint.setAntiAlias(true);
+        mTextPaint.setColor(Color.WHITE);
+
+        mCirclePath.addCircle(240,240,115, Path.Direction.CW);
+
+        canvas.drawPath(mCirclePath,mPaint);
+
+        canvas.drawTextOnPath("Текст по окружности",mCirclePath,0,32,mPaint);
+
+        setLayerType(View.LAYER_TYPE_SOFTWARE,null);
     }
 }
